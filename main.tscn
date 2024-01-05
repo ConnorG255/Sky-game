@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://we3m1qngr6vl"]
 
-[ext_resource type="PackedScene" uid="uid://0w4fbvqv2wpb" path="res://player.tscn" id="1_0n86a"]
+[ext_resource type="PackedScene" uid="uid://0w4fbvqv2wpb" path="res://prefabs/player.tscn" id="1_0n86a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxirp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -14,10 +14,14 @@ background_mode = 2
 sky = SubResource("Sky_m7rri")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.388235, 0.419608, 0.470588, 1)
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
+volumetric_fog_density = 0.1643
+volumetric_fog_albedo = Color(0.384314, 0.384314, 0.384314, 1)
+volumetric_fog_emission = Color(0, 0.0392157, 0.133333, 1)
 
-[sub_resource type="Image" id="Image_bdux6"]
+[sub_resource type="Image" id="Image_cpuol"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -26,7 +30,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_a76it"]
+[sub_resource type="Image" id="Image_w3f8q"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -35,7 +39,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_guddl"]
+[sub_resource type="Image" id="Image_we5fg"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -44,7 +48,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_rlceq"]
+[sub_resource type="Image" id="Image_jigrf"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -54,7 +58,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture3D" id="ImageTexture3D_1ae1q"]
-_images = Array[Image]([SubResource("Image_bdux6"), SubResource("Image_a76it"), SubResource("Image_guddl"), SubResource("Image_rlceq")])
+_images = Array[Image]([SubResource("Image_cpuol"), SubResource("Image_w3f8q"), SubResource("Image_we5fg"), SubResource("Image_jigrf")])
 
 [sub_resource type="FogMaterial" id="FogMaterial_0vuaj"]
 density = 1.4185
@@ -78,8 +82,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.588039, 1.39854, -1.08821)
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.08034, -28.736)
+visible = false
 size = Vector3(94.1047, 2, 105.574)
 material = SubResource("FogMaterial_0vuaj")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11025, 3.47123)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.164869, -96.7497)
+size = Vector3(1, 1, 175.585)
