@@ -17,7 +17,7 @@ glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 
-[sub_resource type="Image" id="Image_bdux6"]
+[sub_resource type="Image" id="Image_fcfoq"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -26,7 +26,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_a76it"]
+[sub_resource type="Image" id="Image_pxeyy"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -35,7 +35,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_guddl"]
+[sub_resource type="Image" id="Image_ivwid"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -44,7 +44,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_rlceq"]
+[sub_resource type="Image" id="Image_kvcjd"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -54,7 +54,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture3D" id="ImageTexture3D_1ae1q"]
-_images = Array[Image]([SubResource("Image_bdux6"), SubResource("Image_a76it"), SubResource("Image_guddl"), SubResource("Image_rlceq")])
+_images = Array[Image]([SubResource("Image_fcfoq"), SubResource("Image_pxeyy"), SubResource("Image_ivwid"), SubResource("Image_kvcjd")])
 
 [sub_resource type="FogMaterial" id="FogMaterial_0vuaj"]
 density = 1.4185
