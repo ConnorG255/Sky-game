@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://udbimmdodnjs"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(43.1401, 0, 0, 0, 50.3025, 0, 0, 0, 1, -15.374, -5.859, 0)
+size = Vector3(0.801636, 3.21387, 1)

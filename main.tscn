@@ -21,7 +21,7 @@ volumetric_fog_density = 0.1643
 volumetric_fog_albedo = Color(0.384314, 0.384314, 0.384314, 1)
 volumetric_fog_emission = Color(0, 0.0392157, 0.133333, 1)
 
-[sub_resource type="Image" id="Image_cpuol"]
+[sub_resource type="Image" id="Image_mh3b2"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -30,7 +30,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_w3f8q"]
+[sub_resource type="Image" id="Image_qmpf5"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -39,7 +39,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_we5fg"]
+[sub_resource type="Image" id="Image_fljjy"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -48,7 +48,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_jigrf"]
+[sub_resource type="Image" id="Image_okbgp"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -58,7 +58,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture3D" id="ImageTexture3D_1ae1q"]
-_images = Array[Image]([SubResource("Image_cpuol"), SubResource("Image_w3f8q"), SubResource("Image_we5fg"), SubResource("Image_jigrf")])
+_images = Array[Image]([SubResource("Image_mh3b2"), SubResource("Image_qmpf5"), SubResource("Image_fljjy"), SubResource("Image_okbgp")])
 
 [sub_resource type="FogMaterial" id="FogMaterial_0vuaj"]
 density = 1.4185
@@ -67,6 +67,8 @@ edge_fade = 2.69087
 density_texture = SubResource("ImageTexture3D_1ae1q")
 
 [node name="Node" type="Node"]
+
+[node name="Spawnerboi" type="Node" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -78,7 +80,7 @@ shadow_enabled = true
 environment = SubResource("Environment_fa3sx")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_0n86a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.588039, 1.39854, -1.08821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.45516)
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.08034, -28.736)
@@ -87,8 +89,4 @@ size = Vector3(94.1047, 2, 105.574)
 material = SubResource("FogMaterial_0vuaj")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11025, 3.47123)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.164869, -96.7497)
-size = Vector3(1, 1, 175.585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.71318)
