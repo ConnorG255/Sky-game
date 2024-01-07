@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://0w4fbvqv2wpb" path="res://prefabs/player.tscn" id="1_0n86a"]
 [ext_resource type="Script" path="res://scripts/Global.gd" id="1_p87he"]
-[ext_resource type="Script" path="res://textcontroller.gd" id="3_ssrxy"]
+[ext_resource type="Script" path="res://scripts/textcontroller.gd" id="3_ssrxy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxirp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -27,7 +27,7 @@ volumetric_fog_emission = Color(0, 0.0392157, 0.133333, 1)
 script = ExtResource("1_p87he")
 
 [node name="Spawnpoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -58.4564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -38.4564)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0.434911, -0.405685, 0.803911, -0.246683, 0.804935, 0.539655, -2.3253, 3.1719, 0.440297)
@@ -39,20 +39,20 @@ shadow_enabled = true
 environment = SubResource("Environment_fa3sx")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_0n86a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.45516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.5)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.71318)
 size = 9.36906
 
-[node name="Control" type="Control" parent="."]
+[node name="ui" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_ssrxy")
 
-[node name="Scoretext" type="Label" parent="Control"]
+[node name="Scoretext" type="Label" parent="ui"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.0

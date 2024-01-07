@@ -13,6 +13,7 @@ var pi = 3.14159
 
 
 
+
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pass
@@ -20,7 +21,10 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
-		
+	
+	if(global_position.z != -4.5):
+		Global.end = true
+		Spawnerboi.ospeed = 0
 
 func _physics_process(delta):
 	#getRot()
@@ -71,4 +75,6 @@ func _physics_process(delta):
 
 
 func _on_area_3d_area_entered(area):
+	
+	
 	pass # Replace with function body.

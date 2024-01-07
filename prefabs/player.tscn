@@ -8,7 +8,7 @@
 size = Vector3(0.664917, 0.671509, 1.78372)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k34k6"]
-size = Vector3(1.00876, 0.973145, 1.89056)
+size = Vector3(1.00876, 1.15308, 2.28996)
 
 [node name="Player" type="Node3D"]
 
@@ -27,7 +27,7 @@ shape = SubResource("BoxShape3D_okrnn")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0206757, 0.0222168, 0.405182)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0206757, -0.0677489, 0.480782)
 shape = SubResource("BoxShape3D_k34k6")
 
 [connection signal="area_entered" from="Area3D" to="body" method="_on_area_3d_area_entered"]
