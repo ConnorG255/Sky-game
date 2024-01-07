@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://udbimmdodnjs"]
+[gd_scene load_steps=2 format=3 uid="uid://udbimmdodnjs"]
+
+[ext_resource type="Script" path="res://scripts/obstacles.gd" id="1_hxs2n"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_hxs2n")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(43.1401, 0, 0, 0, 50.3025, 0, 0, 0, 1, -15.374, -5.859, 0)

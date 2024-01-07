@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://we3m1qngr6vl"]
+[gd_scene load_steps=11 format=3 uid="uid://we3m1qngr6vl"]
 
 [ext_resource type="PackedScene" uid="uid://0w4fbvqv2wpb" path="res://prefabs/player.tscn" id="1_0n86a"]
-[ext_resource type="Script" path="res://scripts/Spawnerboi.gd" id="1_vc5tv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxirp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,7 +21,7 @@ volumetric_fog_density = 0.1643
 volumetric_fog_albedo = Color(0.384314, 0.384314, 0.384314, 1)
 volumetric_fog_emission = Color(0, 0.0392157, 0.133333, 1)
 
-[sub_resource type="Image" id="Image_mmthy"]
+[sub_resource type="Image" id="Image_bdogq"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -31,7 +30,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_v6ma6"]
+[sub_resource type="Image" id="Image_12e8e"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -40,7 +39,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_e0kii"]
+[sub_resource type="Image" id="Image_iagbn"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -49,7 +48,7 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Image" id="Image_24jog"]
+[sub_resource type="Image" id="Image_yk8g6"]
 data = {
 "data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
 "format": "RGBA8",
@@ -59,7 +58,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture3D" id="ImageTexture3D_1ae1q"]
-_images = Array[Image]([SubResource("Image_mmthy"), SubResource("Image_v6ma6"), SubResource("Image_e0kii"), SubResource("Image_24jog")])
+_images = Array[Image]([SubResource("Image_bdogq"), SubResource("Image_12e8e"), SubResource("Image_iagbn"), SubResource("Image_yk8g6")])
 
 [sub_resource type="FogMaterial" id="FogMaterial_0vuaj"]
 density = 1.4185
@@ -67,13 +66,13 @@ albedo = Color(0.909804, 0.909804, 0.952941, 1)
 edge_fade = 2.69087
 density_texture = SubResource("ImageTexture3D_1ae1q")
 
-[node name="Node" type="Node"]
+[node name="Main" type="Node"]
 
-[node name="Spawnerboi" type="Node" parent="."]
-script = ExtResource("1_vc5tv")
+[node name="Spawnpoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -174.02)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.434911, -0.405685, 0.803911, -0.246683, 0.804935, 0.539655, -2.3253, 3.1719, 0.440297)
 light_color = Color(1, 1, 0.94902, 1)
 light_energy = 2.85
 shadow_enabled = true
