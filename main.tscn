@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://we3m1qngr6vl"]
+[gd_scene load_steps=7 format=3 uid="uid://we3m1qngr6vl"]
 
 [ext_resource type="PackedScene" uid="uid://0w4fbvqv2wpb" path="res://prefabs/player.tscn" id="1_0n86a"]
+[ext_resource type="Script" path="res://scripts/Global.gd" id="1_p87he"]
+[ext_resource type="Script" path="res://textcontroller.gd" id="3_ssrxy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxirp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,55 +23,11 @@ volumetric_fog_density = 0.1643
 volumetric_fog_albedo = Color(0.384314, 0.384314, 0.384314, 1)
 volumetric_fog_emission = Color(0, 0.0392157, 0.133333, 1)
 
-[sub_resource type="Image" id="Image_bdogq"]
-data = {
-"data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
-"format": "RGBA8",
-"height": 4,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="Image" id="Image_12e8e"]
-data = {
-"data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
-"format": "RGBA8",
-"height": 4,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="Image" id="Image_iagbn"]
-data = {
-"data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
-"format": "RGBA8",
-"height": 4,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="Image" id="Image_yk8g6"]
-data = {
-"data": PackedByteArray(255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255),
-"format": "RGBA8",
-"height": 4,
-"mipmaps": false,
-"width": 4
-}
-
-[sub_resource type="ImageTexture3D" id="ImageTexture3D_1ae1q"]
-_images = Array[Image]([SubResource("Image_bdogq"), SubResource("Image_12e8e"), SubResource("Image_iagbn"), SubResource("Image_yk8g6")])
-
-[sub_resource type="FogMaterial" id="FogMaterial_0vuaj"]
-density = 1.4185
-albedo = Color(0.909804, 0.909804, 0.952941, 1)
-edge_fade = 2.69087
-density_texture = SubResource("ImageTexture3D_1ae1q")
-
 [node name="Main" type="Node"]
+script = ExtResource("1_p87he")
 
 [node name="Spawnpoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -174.02)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -58.4564)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0.434911, -0.405685, 0.803911, -0.246683, 0.804935, 0.539655, -2.3253, 3.1719, 0.440297)
@@ -83,11 +41,26 @@ environment = SubResource("Environment_fa3sx")
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_0n86a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.45516)
 
-[node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.08034, -28.736)
-visible = false
-size = Vector3(94.1047, 2, 105.574)
-material = SubResource("FogMaterial_0vuaj")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.71318)
+size = 9.36906
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_ssrxy")
+
+[node name="Scoretext" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 48.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0.0784314, 0.101961, 1)
+theme_override_font_sizes/font_size = 32
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

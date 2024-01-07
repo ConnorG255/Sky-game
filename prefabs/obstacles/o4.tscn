@@ -6,5 +6,5 @@
 script = ExtResource("1_xvnx2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(26.9569, 0, 0, 0, 52.6179, 0, 0, 0, 1.04603, 0, 0, 0)
+transform = Transform3D(8.96248, 0, 0, 0, 52.6179, 0, 0, 0, 1.04603, 0, 0, 0)
 size = Vector3(0.801636, 3.21387, 1)

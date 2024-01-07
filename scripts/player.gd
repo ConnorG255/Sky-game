@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const cspeed = 5
-var SPEED = 5.0
+var SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 const sense = 0.003
 const boost = 1.5
@@ -50,3 +50,7 @@ func _physics_process(delta):
 	rotation.y *= 0.9
 	rotation.x = lerp_angle(rotation.x, atan2(velocity.y * rotmultiplier, 0), delta * rotspeed)
 	rotation.x *= 0.9
+
+
+func _on_area_3d_area_entered(area):
+	pass # Replace with function body.
