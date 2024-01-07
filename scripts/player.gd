@@ -26,13 +26,27 @@ func _physics_process(delta):
 	#getRot()
 	#if not is_on_floor():
 	#	velocity.y -= gravity * delta
-
-
-	if Input.is_action_just_pressed("Space") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-
+	
+	"""
+	# Have to redo for border, not optimal :(
+	if(Input.is_action_pressed("A")):
+		velocity.x = SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if(Input.is_action_pressed("D")):
+		velocity.x = SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if(Input.is_action_pressed("W")):
+		velocity.y = SPEED
+	elif(Input.is_action_pressed("S")):
+		velocity.y = -SPEED"""
+	
+	
 	var input_dir = Input.get_vector("A", "D", "W", "S")
+	
 	var direction = (Vector3(input_dir.x, input_dir.y, 0)).normalized()
 	
 	if direction:
@@ -41,12 +55,16 @@ func _physics_process(delta):
 	else: 
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(-velocity.y, 0, SPEED)
+	
+	var screen_size = get_window().size
+	position.x = clamp(position.x, -8, 8)
+	position.y = clamp(position.y, -4.25, 4.25)
 
 	move_and_slide()
 	
 	# rotating tot get the infinite spin
 	
-	rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, direction.z), delta * rotspeed)
+	rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, 0), delta * rotspeed)
 	rotation.y *= 0.9
 	rotation.x = lerp_angle(rotation.x, atan2(velocity.y * rotmultiplier, 0), delta * rotspeed)
 	rotation.x *= 0.9
