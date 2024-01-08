@@ -48,9 +48,6 @@ vertical_alignment = 1
 [node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_pressed_color = Color(1, 0, 1, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "          	                      Restart           	                      "
 
