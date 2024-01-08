@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://we3m1qngr6vl"]
+[gd_scene load_steps=8 format=3 uid="uid://we3m1qngr6vl"]
 
 [ext_resource type="PackedScene" uid="uid://0w4fbvqv2wpb" path="res://prefabs/player.tscn" id="1_0n86a"]
 [ext_resource type="Script" path="res://scripts/Global.gd" id="1_p87he"]
 [ext_resource type="Script" path="res://scripts/textcontroller.gd" id="3_ssrxy"]
+[ext_resource type="Script" path="res://Pause.gd" id="4_pd2af"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxirp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -42,7 +43,7 @@ environment = SubResource("Environment_fa3sx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.5)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.71318)
+transform = Transform3D(1, 0, 0, 0, 0.94211, 0.335304, 0, -0.335304, 0.94211, 0, 2.35784, 2.71318)
 size = 9.36906
 
 [node name="ui" type="Control" parent="."]
@@ -75,3 +76,52 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ui/Scoretext/MarginContainer"]
 layout_mode = 2
+
+[node name="Pause" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_pd2af")
+
+[node name="PanelContainer" type="PanelContainer" parent="Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Pause/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 53
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unpause" type="Button" parent="Pause/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Unpause"
+
+[node name="Home" type="Button" parent="Pause/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Home"
+
+[connection signal="pressed" from="Pause/PanelContainer/MarginContainer/VBoxContainer/Unpause" to="Pause" method="_on_unpause_pressed"]
+[connection signal="pressed" from="Pause/PanelContainer/MarginContainer/VBoxContainer/Home" to="Pause" method="_on_home_pressed"]

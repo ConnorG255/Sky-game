@@ -19,8 +19,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+	
 	
 	if(global_position.z != -4.5):
 		Global.end = true
@@ -53,7 +52,7 @@ func _physics_process(delta):
 	
 	var direction = (Vector3(input_dir.x, input_dir.y, 0)).normalized()
 	
-	if direction:
+	if direction and not Global.paused:
 		velocity.x = direction.x * SPEED
 		velocity.y = -direction.y * SPEED
 	else: 
@@ -75,6 +74,6 @@ func _physics_process(delta):
 
 
 func _on_area_3d_area_entered(area):
-	
+	get_tree().change_scene_to_file("res://prefabs/StartScreen.tscn")
 	
 	pass # Replace with function body.

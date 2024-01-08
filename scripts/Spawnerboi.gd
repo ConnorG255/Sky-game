@@ -43,7 +43,7 @@ func _process(delta):
 #rate at which they spawn being changed through the player getting points
 #in a different script
 func spawning() -> void:
-	if(canspawn):
+	if(canspawn && !Global.paused):
 		canspawn = false
 		var randomnum = randi() % 4
 		var ob = load(obstacles[randomnum])

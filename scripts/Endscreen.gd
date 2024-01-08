@@ -15,3 +15,8 @@ func _on_restart_pressed():
 func _process(delta):
 	
 	score.text = "Score: " + str(Global.score)
+
+
+func _on_home_pressed():
+	get_tree().change_scene_to_file("res://prefabs/StartScreen.tscn")
+	pass # Replace with function body.
