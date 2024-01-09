@@ -1,11 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://0w4fbvqv2wpb"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_i4mjl"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_75444"]
+[ext_resource type="PackedScene" uid="uid://rs02ibnyki76" path="res://models/airplane.blend" id="2_xdste"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_okrnn"]
-size = Vector3(0.664917, 0.671509, 1.78372)
+size = Vector3(1.28586, 0.180817, 1.88991)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k34k6"]
 size = Vector3(1.00876, 1.15308, 2.28996)
@@ -15,14 +14,11 @@ size = Vector3(1.00876, 1.15308, 2.28996)
 [node name="body" type="CharacterBody3D" parent="."]
 script = ExtResource("1_i4mjl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="body"]
-transform = Transform3D(1.04073, 0, 0, 0, 1, 0, 0, 0, 1.80681, 0.0380891, 0.00720191, 0.419918)
-mesh = SubResource("BoxMesh_75444")
-skeleton = NodePath("../..")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07013, -0.0199585, 0.42363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0900122, -0.122574, -0.0153377)
 shape = SubResource("BoxShape3D_okrnn")
+
+[node name="airplane" parent="body" instance=ExtResource("2_xdste")]
 
 [node name="Area3D" type="Area3D" parent="."]
 

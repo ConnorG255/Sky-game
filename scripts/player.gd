@@ -71,9 +71,7 @@ func _physics_process(delta):
 	rotation.y *= 0.9
 	rotation.x = lerp_angle(rotation.x, atan2(velocity.y * rotmultiplier, 0), delta * rotspeed)
 	rotation.x *= 0.9
+	rotation.z = lerp_angle(rotation.z, atan2(-velocity.x * rotmultiplier, 0), delta * rotspeed)
+	rotation.z *= 0.9
 
 
-func _on_area_3d_area_entered(area):
-	get_tree().change_scene_to_file("res://prefabs/StartScreen.tscn")
-	
-	pass # Replace with function body.

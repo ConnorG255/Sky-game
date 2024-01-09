@@ -3,26 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://0w4fbvqv2wpb" path="res://prefabs/player.tscn" id="1_0n86a"]
 [ext_resource type="Script" path="res://scripts/Global.gd" id="1_p87he"]
 [ext_resource type="Script" path="res://scripts/textcontroller.gd" id="3_ssrxy"]
-[ext_resource type="Script" path="res://Pause.gd" id="4_pd2af"]
+[ext_resource type="Script" path="res://scripts/Pause.gd" id="4_pd2af"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxirp"]
+sky_top_color = Color(0.113725, 0.0392157, 0.537255, 1)
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_curve = 0.356762
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
 [sub_resource type="Sky" id="Sky_m7rri"]
 sky_material = SubResource("ProceduralSkyMaterial_lxirp")
 
 [sub_resource type="Environment" id="Environment_fa3sx"]
-background_mode = 2
 sky = SubResource("Sky_m7rri")
+ambient_light_color = Color(0, 0.741176, 0.858824, 1)
 tonemap_mode = 2
 glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.388235, 0.419608, 0.470588, 1)
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.038
 volumetric_fog_albedo = Color(0.384314, 0.384314, 0.384314, 1)
-volumetric_fog_emission = Color(0, 0.117647, 0.286275, 1)
+volumetric_fog_emission = Color(0, 0.121569, 0.27451, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_p87he")
@@ -31,9 +32,9 @@ script = ExtResource("1_p87he")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -161.456)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0.434911, -0.405685, 0.803911, -0.246683, 0.804935, 0.539655, -2.3253, 3.1719, 0.440297)
+transform = Transform3D(-0.866025, -0.433013, 0.249999, 0.434911, -0.405685, 0.803911, -0.246683, 0.804935, 0.539655, -2.3253, 3.1719, 0.440297)
 light_color = Color(1, 1, 0.94902, 1)
-light_energy = 2.85
+light_energy = 1.872
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

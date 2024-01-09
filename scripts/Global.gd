@@ -6,8 +6,7 @@ extends Node
 @export var canend:bool = true
 @export var paused:bool = false
 
-@onready var ui = $"../Main/ui"
-@onready var pause = $"../Main/Pause"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,11 +15,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if end and canend:
 		canend = false
 		get_tree().change_scene_to_file("res://prefabs/Endscreen.tscn")
 		
 	if Input.is_action_pressed("ui_cancel"):
+		var ui = $"../Main/ui"
+		var pause = $"../Main/Pause"
 		ui.hide()
 		pause.show()
 		Spawnerboi.ospeed = 0

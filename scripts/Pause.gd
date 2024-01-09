@@ -13,5 +13,5 @@ func _on_unpause_pressed():
 
 
 func _on_home_pressed():
-	
+	get_tree().change_scene_to_file("res://prefabs/StartScreen.tscn")
 	pass # Replace with function body.
