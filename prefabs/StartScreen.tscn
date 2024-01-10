@@ -34,7 +34,7 @@ vertical = true
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/BoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Title Placeholder
+text = "Idk what to put here chat
 
 "
 
@@ -43,4 +43,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Start"
 
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
 [connection signal="pressed" from="PanelContainer/MarginContainer/BoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/BoxContainer/Quit" to="." method="_on_quit_pressed"]

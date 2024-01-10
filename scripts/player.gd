@@ -19,7 +19,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	
+	Global.main = true
 	
 	if(global_position.z != -4.5):
 		Global.end = true

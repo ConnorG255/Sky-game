@@ -5,6 +5,7 @@ extends Node
 @export var end:bool = false
 @export var canend:bool = true
 @export var paused:bool = false
+@export var main:bool = false
 
 
 
@@ -20,7 +21,7 @@ func _process(delta):
 		canend = false
 		get_tree().change_scene_to_file("res://prefabs/Endscreen.tscn")
 		
-	if Input.is_action_pressed("ui_cancel"):
+	if(Input.is_action_pressed("ui_cancel") && Global.main == true):
 		var ui = $"../Main/ui"
 		var pause = $"../Main/Pause"
 		ui.hide()

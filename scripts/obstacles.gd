@@ -9,9 +9,11 @@ func _process(delta):
 	#player position
 	if(position.z >= -4.5) and canscore:
 		Global.score += 1
-		Spawnerboi.ospeed += 0.003
+		Spawnerboi.ospeed += 0.004
+		if Spawnerboi.timebetween > 2.5:
+			Spawnerboi.timebetween -= 0.1
 		canscore = false
-		await(get_tree().create_timer(1).timeout)
+		await(get_tree().create_timer(10).timeout)
 		queue_free()
 		
 	if Global.end:

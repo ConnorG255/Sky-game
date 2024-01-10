@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://diivu82w38afj"]
+
+[ext_resource type="PackedScene" uid="uid://ckvva7fmgu8aq" path="res://models/tree.blend" id="1_bxten"]
+[ext_resource type="Material" uid="uid://gimua2wsd6x" path="res://materials/tree.tres" id="2_aoim8"]
+
+[node name="tree" instance=ExtResource("1_bxten")]
+
+[node name="Cylinder" parent="." index="0"]
+material_override = ExtResource("2_aoim8")
